@@ -33,6 +33,7 @@ public class TestHarness {
 	 * @param args
 	 */
 	public static void main(String[] args) { 
+		
 		TestHarness pedestrian = new TestHarness();
 		Context trafficLight = new Context();
 		
@@ -41,6 +42,10 @@ public class TestHarness {
 		pedestrian.sendWaitingEvent(trafficLight, 1);
 		pedestrian.sendWaitingEvent(trafficLight, 1);
 		pedestrian.sendWaitingEvent(trafficLight, 1);
-		pedestrian.sendWaitingEvent(trafficLight, 30);
+		pedestrian.sendWaitingEvent(trafficLight, 45);
+		
+		while (true) {
+			pedestrian.sendWaitingEvent(trafficLight, (int) (Math.random() * 15));
+		}
 	}
 }

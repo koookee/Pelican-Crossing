@@ -9,7 +9,7 @@ package TrafficLightSystem;
  * The context class for calling the different
  * traffic light states
  */
-public class Context {
+public class Context{
 
 	public boolean pedestrianIsWaiting;
 	public TrafficLightState trafficLightState;
@@ -22,6 +22,9 @@ public class Context {
 		trafficLightState.stateEntry();
 	}
 
+	/**
+	 * The event that occurs when the pedestrian presses the waiting button
+	 */
 	public synchronized void pedestrianWaiting() {
 		trafficLightState.pedestrianWaiting();
 	}
