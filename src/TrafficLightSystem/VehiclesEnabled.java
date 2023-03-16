@@ -16,6 +16,7 @@ public class VehiclesEnabled implements TrafficLightState {
 	protected Thread timerThread;
 	
 	public VehiclesEnabled(Context trafficLight) {
+		System.out.println("-------------------------------------");
 		this.trafficLight = trafficLight;
 		this.timeToWait = 0;
 		printCurrentState();
@@ -60,6 +61,7 @@ public class VehiclesEnabled implements TrafficLightState {
 	@Override
 	public void signalPedestrians(PedestrianLight pedestrianLight) {
 		trafficLight.pedestrianLight = pedestrianLight;
+		System.out.println("Pedstrian lights turned to " + pedestrianLight);
 	}
 
 	/**
@@ -68,7 +70,7 @@ public class VehiclesEnabled implements TrafficLightState {
 	@Override
 	public void signalVehicles(VehicleLight vehicleLight) {
 		trafficLight.vehicleLight = vehicleLight;
-		// System.out.println("Vehicle lights turned to " + vehicleLight);
+		System.out.println("Vehicle lights turned to " + vehicleLight);
 	}
 
 	/**

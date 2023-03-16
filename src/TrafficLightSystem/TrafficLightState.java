@@ -18,5 +18,4 @@ public interface TrafficLightState {
 	void signalVehicles(VehicleLight vehicleLight);
 	void printCurrentState();
 	int getTimeToWait();
-	
 }

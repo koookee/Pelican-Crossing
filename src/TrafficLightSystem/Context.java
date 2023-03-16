@@ -30,7 +30,6 @@ public class Context {
 	 * The timeout event that causes the state to exit
 	 */
 	public synchronized void timeout() {
-		trafficLightState.printCurrentState();
 		trafficLightState.stateExit();
 	}
 }
