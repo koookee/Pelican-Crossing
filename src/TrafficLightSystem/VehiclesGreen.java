@@ -14,6 +14,7 @@ public class VehiclesGreen extends VehiclesEnabled {
 	 */
 	public VehiclesGreen(Context trafficLight) {
 		super(trafficLight);
+		timeToWait = 10;
 		stateEntry();
 	}
 	
@@ -22,18 +23,9 @@ public class VehiclesGreen extends VehiclesEnabled {
 	 */
 	@Override
 	public void stateEntry() {
-		timeToWait = 10;
 		setTimer(timeToWait);
 		signalVehicles(VehicleLight.GREEN);
 		trafficLight.pedestrianIsWaiting = false;
-	}
-	
-	/**
-	 * Signals that a pedestrian is waiting to cross
-	 */
-	@Override
-	public void pedestrianWaiting() {
-		trafficLight.pedestrianIsWaiting = true;
 	}
 	
 	/**

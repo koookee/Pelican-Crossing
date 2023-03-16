@@ -10,7 +10,6 @@ package TrafficLightSystem;
  * vehicle related traffic light states
  */
 public class VehiclesEnabled implements TrafficLightState {
-	
 	protected Context trafficLight;
 	protected int timeToWait;
 	protected Thread timerThread;
@@ -52,6 +51,7 @@ public class VehiclesEnabled implements TrafficLightState {
 	 */
 	@Override
 	public void pedestrianWaiting() {
+		System.out.println("Pedestrian pressed the waiting button");
 		trafficLight.pedestrianIsWaiting = true;
 	}
 
@@ -80,14 +80,4 @@ public class VehiclesEnabled implements TrafficLightState {
 	public void printCurrentState() {
 		System.out.println("In Vehicle Enabled state");
 	}
-	
-	/**
-	 * Gets the time that the state is supposed to wait
-	 * @return the int of the time to wait in seconds
-	 */
-	@Override
-	public int getTimeToWait() {
-		return timeToWait;
-	}
-	
 }

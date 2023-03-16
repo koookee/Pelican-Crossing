@@ -7,21 +7,20 @@ package TrafficLightSystem;
  * @author Hussein Elmokdad
  *
  */
-public class VehiclesYellow extends VehiclesEnabled {
+public class PedestriansFlash extends PedestriansEnabled{
 	
-	public VehiclesYellow(Context trafficLight) {
+	public PedestriansFlash(Context trafficLight) {
 		super(trafficLight);
-		timeToWait = 3;
+		timeToWait = 2;
 		stateEntry();
 	}
-
+	
 	/**
 	 * The behaviour executed when the state is entered
 	 */
-	@Override
 	public void stateEntry() {
 		setTimer(timeToWait);
-		signalVehicles(VehicleLight.YELLOW);
+		signalPedestrians(PedestrianLight.DONT_WALK);
 	}
 	
 	/**
@@ -29,9 +28,9 @@ public class VehiclesYellow extends VehiclesEnabled {
 	 */
 	@Override
 	public void stateExit() {
-		PedestriansEnabled pedestriansEnabledState = new PedestriansEnabled(trafficLight);
-		trafficLight.trafficLightState = pedestriansEnabledState;
-		pedestriansEnabledState.stateEntry();
+		VehiclesEnabled vehiclesEnabledState = new VehiclesEnabled(trafficLight);
+		trafficLight.trafficLightState = vehiclesEnabledState;
+		vehiclesEnabledState.stateEntry();
 	}
 	
 	/**
@@ -39,7 +38,6 @@ public class VehiclesYellow extends VehiclesEnabled {
 	 */
 	@Override
 	public void printCurrentState() {
-		System.out.println("In Vehicles Yellow state");
+		System.out.println("In Pedestrians Flash state");
 	}
-
 }

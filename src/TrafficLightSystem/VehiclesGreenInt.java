@@ -29,6 +29,7 @@ public class VehiclesGreenInt extends VehiclesEnabled {
 	 */
 	@Override
 	public void pedestrianWaiting() {
+		System.out.println("Pedestrian pressed the waiting button");
 		stateExit();
 	}
 	
