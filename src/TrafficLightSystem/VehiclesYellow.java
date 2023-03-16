@@ -6,6 +6,9 @@ package TrafficLightSystem;
 /**
  * @author Hussein Elmokdad
  *
+ * The class responsible for handling events 
+ * in the Vehicles Yellow state. Leaves the state
+ * on timeout
  */
 public class VehiclesYellow extends VehiclesEnabled {
 	

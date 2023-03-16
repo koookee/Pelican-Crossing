@@ -6,9 +6,16 @@ package TrafficLightSystem;
 /**
  * @author Hussein Elmokdad
  *
+ * The class responsible for handling events 
+ * in the Pedestrians Walk state. Leaves the state on
+ * timeout
  */
 public class PedestriansWalk extends PedestriansEnabled{
 	
+	/**
+	 * PedestriansWalk constructor 
+	 * @param trafficLight the Context object
+	 */
 	public PedestriansWalk(Context trafficLight) {
 		super(trafficLight);
 		timeToWait = 15;

@@ -6,11 +6,15 @@ package TrafficLightSystem;
 /**
  * @author Hussein Elmokdad
  *
+ * The class responsible for handling events 
+ * in the Vehicles Green state. Leaves the state on
+ * timeout
  */
 public class VehiclesGreen extends VehiclesEnabled {
 	
 	/**
-	 * 
+	 * VehiclesGreen constructor
+	 * @param trafficLight the Context object
 	 */
 	public VehiclesGreen(Context trafficLight) {
 		super(trafficLight);

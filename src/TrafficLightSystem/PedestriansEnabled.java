@@ -6,6 +6,9 @@ package TrafficLightSystem;
 /**
  * @author Hussein Elmokdad
  *
+ * The class responsible for handling events 
+ * in the Pedestrians Enabled state. Transitions to the first sub state 
+ * on entry
  */
 public class PedestriansEnabled implements TrafficLightState{
 	protected Context trafficLight;

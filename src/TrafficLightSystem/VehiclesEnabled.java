@@ -6,14 +6,19 @@ package TrafficLightSystem;
 /**
  * @author Hussein Elmokdad
  * 
- * The parent class responsible for handling the
- * vehicle related traffic light states
+ * The class responsible for handling events 
+ * in the Vehicles Enabled state. Transitions to the first sub state 
+ * on entry
  */
 public class VehiclesEnabled implements TrafficLightState {
 	protected Context trafficLight;
 	protected int timeToWait;
 	protected Thread timerThread;
 	
+	/**
+	 * VehiclesEnabled constructor
+	 * @param trafficLight the Context object
+	 */
 	public VehiclesEnabled(Context trafficLight) {
 		System.out.println("-------------------------------------");
 		this.trafficLight = trafficLight;

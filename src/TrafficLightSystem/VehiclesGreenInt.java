@@ -6,11 +6,15 @@ package TrafficLightSystem;
 /**
  * @author Hussein Elmokdad
  *
+ * The class responsible for handling events 
+ * in the Vehicles Green Int state. Only leaves the
+ * state when it receives a pedestrian waiting event
  */
 public class VehiclesGreenInt extends VehiclesEnabled {
 
 	/**
-	 * 
+	 * VehiclesGreenInt constructor
+	 * @param trafficLight the Context object
 	 */
 	public VehiclesGreenInt(Context trafficLight) {
 		super(trafficLight);

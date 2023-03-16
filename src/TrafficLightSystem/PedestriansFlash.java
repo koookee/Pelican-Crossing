@@ -6,6 +6,10 @@ package TrafficLightSystem;
 /**
  * @author Hussein Elmokdad
  *
+ * The class responsible for handling events 
+ * in the Pedestrians Flash state. Leaves the state on
+ * timeout and either goes back into the state or transitions
+ * to the vehicles enabled state
  */
 public class PedestriansFlash extends PedestriansEnabled{
 	
