@@ -37,6 +37,10 @@ public class TestHarness {
 		Context trafficLight = new Context();
 		
 		pedestrian.sendWaitingEvent(trafficLight, 3);
+		pedestrian.sendWaitingEvent(trafficLight, 1);
+		pedestrian.sendWaitingEvent(trafficLight, 1);
+		pedestrian.sendWaitingEvent(trafficLight, 1);
+		pedestrian.sendWaitingEvent(trafficLight, 1);
 		pedestrian.sendWaitingEvent(trafficLight, 30);
 	}
 }

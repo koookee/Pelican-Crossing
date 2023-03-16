@@ -28,6 +28,7 @@ public class PedestriansWalk extends PedestriansEnabled{
 	 */
 	@Override
 	public void stateExit() {
+		System.out.println("Leaving state (" + timeToWait + " seconds elapsed)");
 		trafficLight.trafficLightState = new PedestriansFlash(trafficLight);
 	}
 	

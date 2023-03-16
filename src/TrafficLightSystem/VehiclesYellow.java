@@ -29,6 +29,7 @@ public class VehiclesYellow extends VehiclesEnabled {
 	 */
 	@Override
 	public void stateExit() {
+		System.out.println("Leaving state (" + timeToWait + " seconds elapsed)");
 		PedestriansEnabled pedestriansEnabledState = new PedestriansEnabled(trafficLight);
 		trafficLight.trafficLightState = pedestriansEnabledState;
 		pedestriansEnabledState.stateEntry();
