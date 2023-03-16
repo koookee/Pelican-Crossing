@@ -19,8 +19,8 @@ public class PedestriansWalk extends PedestriansEnabled{
 	 * The behaviour executed when the state is entered
 	 */
 	public void stateEntry() {
-		signalPedestrians(PedestrianLight.WALK);
 		setTimer(timeToWait);
+		signalPedestrians(PedestrianLight.WALK);
 	}
 	
 	/**
@@ -29,7 +29,9 @@ public class PedestriansWalk extends PedestriansEnabled{
 	@Override
 	public void stateExit() {
 		System.out.println("Leaving state (" + timeToWait + " seconds elapsed)");
-		trafficLight.trafficLightState = new PedestriansFlash(trafficLight);
+		PedestriansFlash pedestriansFlash = new PedestriansFlash(trafficLight, 2);
+		trafficLight.trafficLightState = pedestriansFlash;
+		pedestriansFlash.stateEntry();
 	}
 	
 	/**

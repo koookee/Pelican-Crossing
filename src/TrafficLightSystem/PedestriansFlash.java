@@ -9,10 +9,12 @@ package TrafficLightSystem;
  */
 public class PedestriansFlash extends PedestriansEnabled{
 	
-	public PedestriansFlash(Context trafficLight) {
+	private int flashCounter;
+	
+	public PedestriansFlash(Context trafficLight, int flashCounter) {
 		super(trafficLight);
-		timeToWait = 2;
-		stateEntry();
+		timeToWait = 1;
+		this.flashCounter = flashCounter;
 	}
 	
 	/**
@@ -20,7 +22,8 @@ public class PedestriansFlash extends PedestriansEnabled{
 	 */
 	public void stateEntry() {
 		setTimer(timeToWait);
-		signalPedestrians(PedestrianLight.DONT_WALK);
+		if (flashCounter % 2 == 0) signalPedestrians(PedestrianLight.DONT_WALK); // Could also use (flashCounter & 1) == 0 if efficiency is a concern 
+		else signalPedestrians(PedestrianLight.OFF);
 	}
 	
 	/**
@@ -29,9 +32,17 @@ public class PedestriansFlash extends PedestriansEnabled{
 	@Override
 	public void stateExit() {
 		System.out.println("Leaving state (" + timeToWait + " seconds elapsed)");
-		VehiclesEnabled vehiclesEnabledState = new VehiclesEnabled(trafficLight);
-		trafficLight.trafficLightState = vehiclesEnabledState;
-		vehiclesEnabledState.stateEntry();
+		flashCounter--;
+		if (flashCounter > 0) {
+			PedestriansFlash pedestriansFlash = new PedestriansFlash(trafficLight, flashCounter);
+			trafficLight.trafficLightState = pedestriansFlash;
+			pedestriansFlash.stateEntry();
+		}
+		else {
+			VehiclesEnabled vehiclesEnabledState = new VehiclesEnabled(trafficLight);
+			trafficLight.trafficLightState = vehiclesEnabledState;
+			vehiclesEnabledState.stateEntry();
+		}
 	}
 	
 	/**
